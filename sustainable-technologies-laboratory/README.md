@@ -12,7 +12,7 @@ Because this repository contains a project folder uploaded directly from an expo
 ```text
 stlab_IITI (Repository Root)
  ├── README.md               <-- This documentation file
- └── [YOUR-FOLDER-NAME]/     <-- Click this folder to see the actual website source files
+ └── sustainable-technologies-laboratory/     <-- Click this folder to see the actual website source files
       ├── package.json       <-- Project configurations and dependencies
       ├── vite.config.ts     <-- Vite build compiler settings
       ├── src/               <-- Website source code layout pages
