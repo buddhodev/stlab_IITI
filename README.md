@@ -1,20 +1,19 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Sustainable Technologies Laboratory (STLab) Portal
+### Indian Institute of Technology Indore (IIT Indore)
 
-# Run and deploy your AI Studio app
+Welcome to the official web repository for the **Sustainable Technologies Laboratory (STLab)** at the Indian Institute of Technology Indore, led by **Prof. Ganti S. Murthy**. This portal showcases the lab's research milestones in systems engineering, bioprocesses, Life Cycle Assessment (LCA), Techno-Economic Analysis (TEA), bioreactor modeling, and Traditional Ecological Knowledge (Indian Knowledge Systems).
 
-This contains everything you need to run your app locally.
+---
 
-View your app in AI Studio: https://ai.studio/apps/b46e13b4-3262-455e-997e-84cd9a5fefc1
+## 📁 Repository Structure
 
-## Run Locally
+Because this repository contains a project folder uploaded directly from an export setup, the application files are nested inside a subfolder. 
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```text
+stlab_IITI (Repository Root)
+ ├── README.md               <-- This documentation file
+ └── [YOUR-FOLDER-NAME]/     <-- Click this folder to see the actual website source files
+      ├── package.json       <-- Project configurations and dependencies
+      ├── vite.config.ts     <-- Vite build compiler settings
+      ├── src/               <-- Website source code layout pages
+      └── public/            <-- Static institutional assets and icons
