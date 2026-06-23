@@ -16,4 +16,4 @@ stlab_IITI (Repository Root)
       ├── package.json       <-- Project configurations and dependencies
       ├── vite.config.ts     <-- Vite build compiler settings
       ├── src/               <-- Website source code layout pages
-      └── public/            <-- Static institutional assets and icons
+      └── assets/            <-- Static institutional assets and icons
