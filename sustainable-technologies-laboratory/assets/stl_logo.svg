@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <!-- 1. Orange Lotus Petals (Background) -->
+  <g id="orange-lotus-background">
+    <path d="M 100,170 C 80,120 78,70 100,25 C 122,70 120,120 100,170 Z" fill="#f37021" />
+    <path d="M 95,160 C 65,120 40,80 50,40 C 66,50 84,95 95,160 Z" fill="#f37021" />
+    <path d="M 105,160 C 135,120 160,80 150,40 C 134,50 116,95 105,160 Z" fill="#f37021" />
+    <path d="M 90,165 C 50,145 22,110 32,70 C 48,80 75,120 90,165 Z" fill="#f37021" />
+    <path d="M 110,165 C 150,145 178,110 168,70 C 152,80 125,120 110,165 Z" fill="#f37021" />
+  </g>
+
+  <!-- 2. Industrial Deep Blue Gear -->
+  <g id="industrial-gear">
+    <path
+      d="M 100,60 L 115,60 C 116,54 117,48 117,48 L 132,53 C 131,59 128,64 128,64 C 134,68 139,73 144,78 L 155,71 L 165,82 L 153,91 C 157,98 160,105 161,112 L 176,112 L 176,128 L 161,128 C 159,136 156,143 152,150 L 162,159 L 151,170 L 141,159 C 135,164 128,168 121,171 L 121,185 L 106,185 L 106,171 C 104,171 102,170 100,170 Z"
+      fill="#0e4a7c"
+    />
+  </g>
+
+  <!-- 3. Biological Green Leaves with White Cut-Out Dividers -->
+  <g id="biological-elements">
+    <path d="M 100,180 C 80,180 44,168 34,142 C 48,128 85,150 100,180 Z" fill="#1fa22e" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" />
+    <path d="M 100,185 C 68,160 66,120 66,95 C 66,55 88,40 100,34 C 112,40 134,55 134,95 C 134,120 132,160 100,185 Z" fill="#1fa22e" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" />
+    <path d="M 100,185 L 100,135" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" />
+    <path d="M 106,62 L 92,102 L 105,102 L 93,148 L 115,108 L 102,108 Z" fill="#ffffff" />
+  </g>
+</svg>

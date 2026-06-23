@@ -1,0 +1,6 @@
+{
+  "name": "Sustainable Technologies Laboratory",
+  "description": "Official portal of the Sustainable Technologies Laboratory (IIT Indore), directed by Dr. Ganti S. Murthy. Showcasing bio-fuels research, team rosters, key publications, and academic thrusts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

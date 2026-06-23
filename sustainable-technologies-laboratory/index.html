@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/assets/stlab-logo.png" />
+    <title>Sustainable Technologies Laboratory • IIT Indore</title>
+    <script>
+      (function() {
+        // Intercept and bypass generic cross-origin "Script error." and third-party script triggers defensively
+        const handleGlobalDefensiveMute = function(e) {
+          const msg = (e && (e.message || e.reason || (e.error && e.error.message))) || "";
+          const msgStr = typeof msg === "string" ? msg : String(msg);
+          const lower = msgStr.toLowerCase();
+          if (
+            !msgStr || 
+            lower.includes("script error") || 
+            lower.includes("translate") || 
+            lower.includes("google") ||
+            lower.includes("cross-origin")
+          ) {
+            try {
+              if (e && typeof e.preventDefault === "function") {
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+              }
+            } catch(err) {}
+            return true;
+          }
+        };
+
+        window.addEventListener("error", handleGlobalDefensiveMute, true);
+        window.addEventListener("unhandledrejection", handleGlobalDefensiveMute, true);
+
+        const oldOnError = window.onerror;
+        window.onerror = function(message, url, line, col, error) {
+          const msgStr = typeof message === "string" ? message : "";
+          const lower = msgStr.toLowerCase();
+          if (
+            !msgStr || 
+            lower.includes("script error") || 
+            lower.includes("translate") || 
+            lower.includes("google") ||
+            lower.includes("cross-origin")
+          ) {
+            return true; // Stop browser browser default unhandled warning logging
+          }
+          if (oldOnError) {
+            return oldOnError(message, url, line, col, error);
+          }
+          return false;
+        };
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
