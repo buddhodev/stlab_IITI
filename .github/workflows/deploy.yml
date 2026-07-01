@@ -1,0 +1,38 @@
+name: Deploy Pure Laravel Portal to IIT Indore Server
+
+on:
+  push:
+    branches:
+      - main # Automatically runs every time someone saves an update to the main branch
+
+jobs:
+  deploy-to-iiti:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Fetch the source code from your GitHub repository
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. Build the Node environment for compilation
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 3. Compile the website assets cleanly via Vite
+      - name: Install & Compile Frontend
+        run: |
+          npm install
+          npm run build
+
+      # 4. Sync the complete framework securely to the IITI Server
+      - name: SFTP Deploy to CITC Infrastructure
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.IITI_HOST }}
+          username: ${{ secrets.IITI_USERNAME }}
+          password: ${{ secrets.IITI_PASSWORD }}
+          port: 3004 # Injecting the custom port specified by CITC
+          local-dir: ./
+          server-dir: ./ # Maps directly to the root of your assigned hosting space
