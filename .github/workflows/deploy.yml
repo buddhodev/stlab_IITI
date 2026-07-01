@@ -1,33 +1,10 @@
-name: Deploy Portal to IIT Indore Server
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  deploy-to-iiti:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      # Uses Node 24 directly to match modern specifications
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+# 4. Sync the compiled code securely to the IITI Server via Port 22
+      - name: SFTP Deploy to CITC Infrastructure
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          node-version: '24'
-
-      - name: Install & Compile Frontend
-        run: |
-          TARGET_DIR=$(find . -name package.json -not -path "*/node_modules/*" -exec dirname {} \; | head -n 1)
-          echo "Target directory locked: $TARGET_DIR"
-          cd "$TARGET_DIR"
-          
-          # Run clean installation with legacy peer support to ignore version warnings
-          npm install --legacy-peer-deps
-          npm install laravel-vite-plugin @tailwindcss/vite --save-dev --legacy-peer-deps
-          
-          # Run build with full error printouts enabled
-          npx vite build --debug
+          server: ${{ secrets.IITI_HOST }}
+          username: ${{ secrets.IITI_USERNAME }}
+          password: ${{ secrets.IITI_PASSWORD }}
+          port: 22 # Updated from 3004 to the working server port
+          local-dir: ./
+          server-dir: /home/iiti-stlab/htdocs/stlab.iiti.ac.in/ # Absolute target folder path
